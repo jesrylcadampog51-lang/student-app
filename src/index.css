@@ -1,0 +1,256 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Arial', 'Helvetica Neue', sans-serif; 
+}
+
+body {
+  background-color: #f0f4f8; 
+  color: #2c3e50; 
+  line-height: 1.6;
+}
+.app-container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(90deg, #2c3e50, #34495e); 
+  color: #ffffff;
+  padding: 20px;
+  border-bottom: 5px solid #e8ecef;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.form-section {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.form-section input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 2px solid #e0e6ed; 
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f9fbfd; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-section input:focus {
+  border-color: #3498db; 
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+.form-section button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-right: 15px;
+}
+
+.form-section button[type="submit"] {
+  background: linear-gradient(90deg, #2c3e50, #34495e); 
+  color: #ffffff;
+}
+
+.form-section button[type="submit"]:hover {
+  background: linear-gradient(90deg, #2c3e50, #34495e);  
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+.form-section button[type="button"] {
+  background-color: #7f8c8d;
+  color: #ffffff;
+}
+
+.form-section button[type="button"]:hover {
+  background-color: #6b7579; 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(107, 117, 121, 0.3);
+}
+
+/* Students List */
+.students-list h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e6ed;
+  padding-bottom: 5px;
+}
+
+.students-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.students-list li {
+  background-color: #ffffff;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.students-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.students-list button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-left: 10px;
+}
+
+.students-list .view-btn {
+    background: linear-gradient(90deg, #2c3e50, #34495e);  
+  color: #ffffff;
+}
+
+.students-list .view-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+  background: linear-gradient(135deg, #b91c1c, #dc2626);
+}
+
+.students-list .edit-btn {
+    background: linear-gradient(90deg, #2c3e50, #34495e);  
+  color: #ffffff;
+}
+
+.students-list .edit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+  background: linear-gradient(135deg, #b91c1c, #dc2626);
+}
+.students-list .delete-btn {
+  background: linear-gradient(90deg, #2c3e50, #34495e);  
+  color: #ffffff;
+}
+
+.students-list .delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+  background: linear-gradient(135deg, #b91c1c, #dc2626);
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 450px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.modal-content p {
+  margin: 12px 0;
+  color: #7f8c8d; 
+  font-size: 1.1rem;
+}
+
+.modal-content button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-content button:hover {
+  background-color: #2980b9; 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(41, 128, 185, 0.3);
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
+  }
+  .form-section input {
+    margin: 8px 0;
+  }
+  .students-list li {
+    flex-direction: column;
+    text-align: center;
+  }
+  .students-list button {
+    margin-top: 8px;
+    margin-left: 0;
+    width: 100%;
+  }
+  .modal-content {
+    width: 85%;
+    padding: 20px;
+  }
+}

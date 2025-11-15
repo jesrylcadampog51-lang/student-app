@@ -1,0 +1,521 @@
+/* ========================================
+   GLOBAL & TYPOGRAPHY
+   ======================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.app-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(30, 64, 175, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.app-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.app-header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.header-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.95;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* ========================================
+   SEARCH BAR
+   ======================================== */
+.search-bar {
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.4rem;
+  font-size: 1.05rem;
+  border: 2.5px solid #e2e8f0;
+  border-radius: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.18), 0 4px 12px rgba(59, 130, 246, 0.15);
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   FORM CARD
+   ======================================== */
+.form-card {
+  background: white;
+  padding: 2.2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.5rem;
+  transition: transform 0.2s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-2px);
+}
+
+.form-card h2 {
+  margin-bottom: 1.8rem;
+  color: #1e40af;
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: -0.3px;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.form-card h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+.student-form input {
+  width: 100%;
+  padding: 0.95rem 1.1rem;
+  margin-bottom: 1.1rem;
+  border: 2.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fcfcfc;
+  font-weight: 500;
+}
+
+.student-form input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+  background: white;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   BUTTONS (Enhanced Micro-interactions)
+   ======================================== */
+.btn-primary,
+.btn-secondary,
+.btn-view,
+.btn-edit,
+.btn-delete,
+.btn-close {
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.98rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  background: #1e40af;
+  color: white;
+}
+.btn-primary:hover { 
+  background: #1e3a8a; 
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 64, 175, 0.3);
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #475569;
+}
+.btn-secondary:hover { 
+  background: #cbd5e1; 
+  transform: translateY(-1px);
+}
+
+.btn-view   { background: #10b981; color: white; }
+.btn-view:hover   { background: #059669; transform: translateY(-1px); box-shadow: 0 5px 12px rgba(16, 185, 129, 0.3); }
+
+.btn-edit   { background: #3b82f6; color: white; }
+.btn-edit:hover   { background: #2563eb; transform: translateY(-1px); box-shadow: 0 5px 12px rgba(59, 130, 246, 0.3); }
+
+.btn-delete { background: #ef4444; color: white; }
+.btn-delete:hover { background: #dc2626; transform: translateY(-1px); box-shadow: 0 5px 12px rgba(239, 68, 68, 0.3); }
+
+.btn-close {
+  background: #64748b;
+  color: white;
+  width: 100%;
+  margin-top: 1.2rem;
+}
+.btn-close:hover { 
+  background: #475569; 
+  transform: translateY(-1px);
+}
+
+/* Ripple effect on click */
+.btn-primary::after,
+.btn-view::after,
+.btn-edit::after,
+.btn-delete::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.btn-primary:active::after,
+.btn-view:active::after,
+.btn-edit:active::after,
+.btn-delete:active::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* ========================================
+   TABLE CARD
+   ======================================== */
+.table-card {
+  background: white;
+  padding: 2.2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.table-card:hover {
+  transform: translateY(-2px);
+}
+
+.table-card h2 {
+  margin-bottom: 1.8rem;
+  color: #1e40af;
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: -0.3px;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.table-card h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  background: #fdfdfd;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.96rem;
+}
+
+.students-table th {
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  color: white;
+  padding: 1.1rem 0.9rem;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-size: 0.82rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.students-table th.actions-header {
+  text-align: center;
+}
+
+.students-table td {
+  padding: 1.1rem 0.9rem;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background 0.2s ease;
+}
+
+.table-row:hover {
+  background: #ebf5ff;
+  transition: background 0.15s ease;
+}
+
+.students-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.students-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   MODAL
+   ======================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: white;
+  padding: 2.2rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  animation: modalPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  position: relative;
+}
+
+@keyframes modalPop {
+  from { 
+    transform: scale(0.85) translateY(20px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1) translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.modal-content h3 {
+  margin-bottom: 1.6rem;
+  color: #1e40af;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.modal-grid {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.modal-grid p {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.modal-grid p strong {
+  color: #475569;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   NO DATA STATE
+   ======================================== */
+.no-data {
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 3rem 1rem;
+  font-size: 1.1rem;
+  background: #f8fafc;
+  border-radius: 14px;
+  border: 1px dashed #cbd5e1;
+}
+
+/* ========================================
+   RESPONSIVE ENHANCEMENTS
+   ======================================== */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 2rem 1rem;
+    border-radius: 16px;
+  }
+  .app-header h1 { font-size: 1.9rem; }
+
+  .form-card,
+  .table-card {
+    padding: 1.8rem;
+    border-radius: 16px;
+  }
+
+  .form-grid { 
+    grid-template-columns: 1fr; 
+    gap: 1rem;
+  }
+
+  .form-actions { 
+    flex-direction: column; 
+  }
+
+  .students-table,
+  .students-table thead,
+  .students-table tbody,
+  .students-table th,
+  .students-table td,
+  .students-table tr {
+    display: block;
+  }
+
+  .students-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .table-row {
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: all 0.2s ease;
+  }
+
+  .table-row:hover {
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .students-table td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    font-size: 0.95rem;
+  }
+
+  .students-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 1.2rem;
+    font-weight: 600;
+    color: #1e40af;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .actions {
+    justify-content: flex-end;
+    margin-top: 0.8rem;
+    gap: 0.5rem;
+  }
+
+  .actions button {
+    flex: 1;
+    min-width: 55px;
+    font-size: 0.82rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .app-container { padding: 1rem; }
+  .modal-content { padding: 1.8rem; }
+}
